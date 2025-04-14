@@ -46,6 +46,111 @@ var Rattata = {
 	"Moves": {}
 }
 
+var Bulbasaur = {
+	"Name": "Bulbasaur",
+	"Types": ["Grass", "Poison"],
+	"Stats": {
+		"Hp": 45,
+		"Att": 49,
+		"SpA": 65,
+		"Def": 49,
+		"SpDef": 65,
+		"Speed": 45,
+	},
+	"Abilities": ["Overgrow"],
+	"Moves": {}
+}
+
+var Charmander = {
+	"Name": "Charmander",
+	"Types": ["Fire", "None"],
+	"Stats": {
+		"Hp": 39,
+		"Att": 52,
+		"SpA": 60,
+		"Def": 43,
+		"SpDef": 50,
+		"Speed": 65,
+	},
+	"Abilities": ["Blaze"],
+	"Moves": {}
+}
+
+var Squirtle = {
+	"Name": "Squirtle",
+	"Types": ["Water", "None"],
+	"Stats": {
+		"Hp": 44,
+		"Att": 48,
+		"SpA": 50,
+		"Def": 65,
+		"SpDef": 64,
+		"Speed": 43,
+	},
+	"Abilities": ["Torrent"],
+	"Moves": {}
+}
+
+var Chikorita = {
+	"Name": "Chikorita",
+	"Types": ["Grass", "None"],
+	"Stats": {
+		"Hp": 45,
+		"Att": 49,
+		"SpA": 49,
+		"Def": 65,
+		"SpDef": 65,
+		"Speed": 45,
+	},
+	"Abilities": ["Overgrow"],
+	"Moves": {}
+}
+
+var Cyndaquil = {
+	"Name": "Cyndaquil",
+	"Types": ["Fire", "None"],
+	"Stats": {
+		"Hp": 39,
+		"Att": 52,
+		"SpA": 60,
+		"Def": 43,
+		"SpDef": 50,
+		"Speed": 65,
+	},
+	"Abilities": ["Blaze"],
+	"Moves": {}
+}
+
+var Totodile = {
+	"Name": "Totodile",
+	"Types": ["Water", "None"],
+	"Stats": {
+		"Hp": 50,
+		"Att": 65,
+		"SpA": 44,
+		"Def": 64,
+		"SpDef": 48,
+		"Speed": 43,
+	},
+	"Abilities": ["Torrent"],
+	"Moves": {}
+}
+
+var Pikachu = {
+	"Name": "Pikachu",
+	"Types": ["Electric", "None"],
+	"Stats": {
+		"Hp": 35,
+		"Att": 55,
+		"SpA": 50,
+		"Def": 40,
+		"SpDef": 50,
+		"Speed": 90,
+	},
+	"Abilities": ["Static"],
+	"Moves": {}
+}
+
 var Pidgey = {
 	"Name": "Pidgey",
 	"Types": ["Normal", "Flying"],
@@ -60,6 +165,8 @@ var Pidgey = {
 	"Abilities": ["Keen Eye", "Tangled Feet"], # potential abilities the pokemon can have , this is useful for knowing what abilities you want certain mons to have
 	"Moves": {}
 }
+
+
 
 var Geodude = {
 	"Name": "Geodude",
@@ -120,6 +227,102 @@ var RockThrow = {
 	"BP": 50,
 	"Type": "Rock",
 	"Acc": 90
+}
+
+
+var WaterGun = {
+	"Name": "Water Gun",
+	"Status": "None",
+	"Aff": "SpA",
+	"BP": 40,
+	"Type": "Water",
+	"Acc": 100
+}
+
+var Peck = {
+	"Name": "Peck",
+	"Status": "None",
+	"Aff": "Att",
+	"BP": 35,
+	"Type": "Flying",
+	"Acc": 100
+}
+
+var Tackle = {
+	"Name": "Tackle",
+	"Status": "None",
+	"Aff": "Att",
+	"BP": 40,
+	"Type": "Normal",
+	"Acc": 100
+}
+
+var ThunderShock = {
+	"Name": "Thunder Shock",
+	"Status": "None",
+	"Aff": "SpA",
+	"BP": 40,
+	"Type": "Electric",
+	"Acc": 100,
+	"Effect": "May paralyze the target."
+}
+
+var PoisonSting = {
+	"Name": "Poison Sting",
+	"Status": "None",
+	"Aff": "Att",
+	"BP": 15,
+	"Type": "Poison",
+	"Acc": 100,
+	"Effect": "May poison the target."
+}
+
+var Bubble = {
+	"Name": "Bubble",
+	"Status": "None",
+	"Aff": "SpA",
+	"BP": 40,
+	"Type": "Water",
+	"Acc": 100,
+	"Effect": "May lower the target's Speed."
+}
+
+var Scratch = {
+	"Name": "Scratch",
+	"Status": "None",
+	"Aff": "Att",
+	"BP": 40,
+	"Type": "Normal",
+	"Acc": 100
+}
+
+var Confusion = {
+	"Name": "Confusion",
+	"Status": "None",
+	"Aff": "SpA",
+	"BP": 50,
+	"Type": "Psychic",
+	"Acc": 100,
+	"Effect": "May confuse the target."
+}
+
+var Gust = {
+	"Name": "Gust",
+	"Status": "None",
+	"Aff": "SpA",
+	"BP": 40,
+	"Type": "Flying",
+	"Acc": 100
+}
+
+var Bite = {
+	"Name": "Bite",
+	"Status": "None",
+	"Aff": "Att",
+	"BP": 60,
+	"Type": "Dark",
+	"Acc": 100,
+	"Effect": "May make the target flinch."
 }
 
 var ThunderWave = {
@@ -343,23 +546,208 @@ class PK:
 		self.IVs = Dict
 	func Get_EV() -> Dictionary: 
 		return self.EVs
+	func Get_Stats() -> Dictionary: 
+		return self.Stats
 	func Update_EV(Dict:  Dictionary):
 		self.EVs = Dict
 	func Apply_IE(): # used for applying IV's and EV's to stats. so yes its I-E
-		self.Stats["Hp"] = (((self.Stats["Hp"] + self.IVs["Hp"]) * 2) * (self.Lvl / 100)) + (self.EVs["Hp"] / 4) + self.Lvl + 10
-		self.Stats["Def"] = (((self.Stats["Def"] + self.IVs["Def"]) * 2 ) * (self.Lvl / 100)) +  (self.EVs["Def"] / 4)
-		self.Stats["Att"] = (((self.Stats["Att"] + self.IVs["Att"]) * 2 ) * (self.Lvl / 100)) +  (self.EVs["Att"] / 4)
-		self.Stats["SpA"] = (((self.Stats["SpA"] + self.IVs["SpA"]) * 2 ) * (self.Lvl / 100)) +  (self.EVs["SpA"] / 4)
-		self.Stats["Speed"] = (((self.Stats["Speed"] + self.IVs["Speed"]) * 2 ) * (self.Lvl / 100)) + (self.EVs["Speed"] / 4)
-		self.Stats["SpDef"] = (((self.Stats["SpDef"] + self.IVs["SpDef"]) * 2 ) * (self.Lvl / 100)) + (self.EVs["SpDef"] / 4)
-		#self.Stats["SpA"] += self.IVs["SpA"] + (self.EVs["SpA"] / 4)
-		#self.Stats["SpDef"] += self.IVs["SpDef"] + (self.EVs["SpDef"] / 4)
-		#self.Stats["Speed"] += self.IVs["Speed"] + (self.EVs["Speed"] / 4)
-	func Simulate_Attack(Pack: Array) -> Array: #use only for attacking moves, status moves should be processed via status
+		self.Stats["Hp"] = int(((2 * self.Stats["Hp"] + self.IVs["Hp"] + (self.EVs["Hp"] / 4)) * self.Lvl / 100) + self.Lvl + 10)
+		self.Stats["Def"] = int(((2 * self.Stats["Def"] + self.IVs["Def"] + (self.EVs["Def"] / 4)) * self.Lvl / 100) + 5)
+		self.Stats["Att"] = int(((2 * self.Stats["Att"] + self.IVs["Att"] + (self.EVs["Att"] / 4)) * self.Lvl / 100) + 5)
+		self.Stats["SpA"] = int(((2 * self.Stats["SpA"] + self.IVs["SpA"] + (self.EVs["SpA"] / 4)) * self.Lvl / 100) + 5)
+		self.Stats["Speed"] = int(((2 * self.Stats["Speed"] + self.IVs["Speed"] + (self.EVs["Speed"] / 4)) * self.Lvl / 100) + 5)
+		self.Stats["SpDef"] = int(((2 * self.Stats["SpDef"] + self.IVs["SpDef"] + (self.EVs["SpDef"] / 4)) * self.Lvl / 100) + 5)
+		self.Health = self.Stats["Hp"]
+		print(self.Stats)
+	func Generate_IVs():
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+		var R_IVS = { "Hp": rng.randi_range(0,31), "Att":rng.randi_range(0,31), "SpA":rng.randi_range(0,31), "Def":rng.randi_range(0,31), "SpDef":rng.randi_range(0,31), "Speed":rng.randi_range(0,31),}
+		self.IVs = R_IVS
+		print(R_IVS)
+
+
+#	func Simulate_Attack(Pack: Array) -> Array: #use only for attacking moves, status moves should be processed via status
+#		var immune = false
+#		var DT = [0,"Effective",0] #positon 0 = damage , position 1 = effectiveness , position 2 = health after
+#		var EF = 0 #tits the effecitveness counter counting whether or not a move was effective or super effective. or not very effective
+#		Pack[0] = Pack[0] / self.Lvl
+#		for i in range(2):
+#			var loc = Typez[self.Bio["Types"][i-1]] 
+#			var loc2 = loc["W"]
+#			for j in range(len(self.IM)):
+#				if self.IM[j-1] in Typez[self.Bio["Types"][i-1]]["R"]:
+#					var test = ""
+#					test += self.IM[j-1]
+#					var type_check = test.get_slice("(",0)
+#					if type_check == Pack[2]:
+#						immune = true
+#						Pack[0] = 0
+#						#print("Immune to attack")
+#						DT[1] = "Immune"
+#
+#					else:
+#						pass
+#				else:
+#					pass
+#			if Pack[2] in Typez[self.Bio["Types"][i-1]]["W"] and immune == false:
+#				Pack[0] = Pack[0] * 2 
+#				EF += 1
+#				#print("SuperEffective : " , Pack[0])
+#			if Pack[2] in Typez[self.Bio["Types"][i-1]]["R"] and immune == false:
+#				Pack[0] = Pack[0] / 2 
+#				#print("Resisted: " , Pack[0])
+#				EF -= 1
+#			else:
+#				pass
+#		if Pack[1] == "SpA" and immune == false:
+#			Pack[0]/= self.Bio["Stats"]["SpDef"]
+#			print("Damage recieved: ",Pack[0])
+#		if Pack[1] == "Att"and immune == false:
+#			Pack[0]/= self.Bio["Stats"]["Def"]
+#			print("Damage Recieved: ",Pack[0])
+#		if immune == true:
+#			print("Immune")
+#		if EF <= 1:
+#			DT[1] = "Super-Effective"
+#		if EF < 0:
+#			DT[1] = "Not-Very-Effective"
+#		if EF == 0:
+#			DT[1] = "Effective"
+#		else:
+#			pass
+#		round(Pack[0])
+#		DT[2] = self.Health - Pack[0]
+#		#print("Health: ", self.Health())
+#		return DT #returns an array of the processed attack.
+#
+
+	# Method with arguments
+	func Modify(amount: float, pos: String):
+		Modi[pos] += amount
+		print("Boosts/debuffs values: ", Modi)
+		
+	func Recieve(Pack: Array):
+		var immune = false
+		
+		#Pack[0] = Pack[0] / self.Lvl
+		for i in range(2):
+			var loc = Typez[self.Bio["Types"][i-1]] 
+			var loc2 = loc["W"]
+			for j in range(len(self.IM)):
+				if self.IM[j-1] in Typez[self.Bio["Types"][i-1]]["R"]:
+					var test = ""
+					test += self.IM[j-1]
+					var type_check = test.get_slice("(",0)
+					if type_check == Pack[2]:
+						immune = true
+						Pack[0] = 0
+						print("Immune to attack")
+					else:
+						pass
+				else:
+					pass
+			if Pack[2] in Typez[self.Bio["Types"][i-1]]["W"] and immune == false:
+				Pack[0] = Pack[0] * 2 
+				print("SuperEffective : " , Pack[0])
+			if Pack[2] in Typez[self.Bio["Types"][i-1]]["R"] and immune == false:
+				Pack[0] = Pack[0] / 2 
+				print("Resisted: " , Pack[0])
+			else:
+				pass
+		if Pack[1] == "SpA" and immune == false:
+			#Pack[0] /= self.Bio["Stats"]["SpDef"]
+			print("Damage recieved: ",Pack[0])
+		if Pack[1] == "Att"and immune == false:
+			#Pack[0] /= self.Bio["Stats"]["Def"]
+			print("Damage Recieved: ",Pack[0])
+		if immune == true:
+			print("Immune")
+		else:
+			pass
+		round(Pack[0])
+		self.Health -= Pack[0]
+		print("Health: ", self.Get_Health())
+
+	func Recieve_status(Move: Dictionary):
+		if Move["Status"] == "Paralysis":
+			self.Status = "Paralysis"
+			self.Stats["Speed"] = self.Stats["Speed"] / 2
+			round(self.Stats["Speed"] / 2)
+		if Move["Status"] == "Poison":
+			self.Status = "Poison"
+		if Move["Status"] == "Sleep":
+			self.Status = "Sleep"
+	# Method with arguments that returns a value
+	#anywyas for this thing i need to factor in that a move dictionary will be inputted into the function
+	#its type , its attack type such as special or physical and accuracy , and return the damage value.
+	#in the type dictionary its important to ensure that its got a type variable with the name of the right variable name like type: Att or type: SpA
+	
+	
+	func Attack(move: Dictionary, Enemy: Dictionary) -> Array:
+		var Pack = []
+		 #generates a package with damage values , damage types alongside the move name.
+		if move["Aff"] == "Att":
+			var Damage = (( (2 * self.Lvl / 5 + 2 ) * move["BP"] * (self.Stats["Att"] / Enemy["Def"]) / 50 + 2))
+			var rol = RandomNumberGenerator.new()
+			rol.randomize()
+			var roll = rol.randf_range(0.85,1)
+			Damage = Damage * Modi[move["Aff"]] 
+			print("Damage Before: ",Damage)
+			for i in range(2):
+				if move["Type"] == Bio["Types"][i-1]:
+					Damage = Damage * 1.5 
+					print("Damage modified: ",Damage)
+				else:
+					pass
+			#Damage = Damage * 1
+			#Damage = Damage * self.Lvl
+			if self.Status == "Burn":
+				Damage = Damage / 2
+			else:
+				pass
+			#Daage is a integer so you can do the damage roll, fix in next update.
+			#Damage = Damage * (1 + (roll / 50))
+			print(Damage)
+			round(Damage)
+			int(Damage)
+			Pack = [Damage,move["Aff"],move["Type"], move["Name"]]
+			print(Pack)
+			#return Pack
+		if move["Aff"] == "SpA":
+			var Damage = (( (2 * self.Lvl / (5 + 2) ) * move["BP"] * (self.Stats["SpA"] / Enemy["SpDef"]) / 50 + 2))
+			var rol = RandomNumberGenerator.new()
+			rol.randomize()
+			var roll = rol.randf_range(0.85,1)
+			Damage = Damage * Modi[move["Aff"]] 
+			print("Damage Before: ",Damage)
+			for i in range(2):
+				if move["Type"] == Bio["Types"][i-1]:
+					Damage = Damage * 1.5 
+					print("Damage modified: ",Damage)
+				else:
+					pass
+			#Damage = Damage * 1
+			#Damage = Damage * self.Lvl
+			if self.Status == "Burn":
+				Damage = Damage / 2
+			else:
+				pass
+			#Daage is a integer so you can do the damage roll, fix in next update.
+			#Damage = Damage * (1 + (roll / 50))
+			print(Damage)
+			round(Damage)
+			int(Damage)
+			Pack = [Damage,move["Aff"],move["Type"], move["Name"]]
+			print(Pack)
+			#return Pack
+		return Pack
+
+	func Sim_Attack(Pack: Array) -> Array:
 		var immune = false
 		var DT = [0,"Effective",0] #positon 0 = damage , position 1 = effectiveness , position 2 = health after
 		var EF = 0 #tits the effecitveness counter counting whether or not a move was effective or super effective. or not very effective
-		Pack[0] / self.Lvl
+		Pack[0] = Pack[0] / self.Lvl
 		for i in range(2):
 			var loc = Typez[self.Bio["Types"][i-1]] 
 			var loc2 = loc["W"]
@@ -389,10 +777,10 @@ class PK:
 			else:
 				pass
 		if Pack[1] == "SpA" and immune == false:
-			Pack[0]/= self.Bio["Stats"]["SpDef"]
+			#Pack[0]/= self.Bio["Stats"]["SpDef"]
 			print("Damage recieved: ",Pack[0])
 		if Pack[1] == "Att"and immune == false:
-			Pack[0]/= self.Bio["Stats"]["Def"]
+			#Pack[0]/= self.Bio["Stats"]["Def"]
 			print("Damage Recieved: ",Pack[0])
 		if immune == true:
 			print("Immune")
@@ -410,95 +798,6 @@ class PK:
 		return DT #returns an array of the processed attack.
 
 
-	# Method with arguments
-	func Modify(amount: float, pos: String):
-		Modi[pos] += amount
-		print("Boosts/debuffs values: ", Modi)
-		
-	func Recieve(Pack: Array):
-		var immune = false
-		
-		Pack[0] / self.Lvl
-		for i in range(2):
-			var loc = Typez[self.Bio["Types"][i-1]] 
-			var loc2 = loc["W"]
-			for j in range(len(self.IM)):
-				if self.IM[j-1] in Typez[self.Bio["Types"][i-1]]["R"]:
-					var test = ""
-					test += self.IM[j-1]
-					var type_check = test.get_slice("(",0)
-					if type_check == Pack[2]:
-						immune = true
-						Pack[0] = 0
-						print("Immune to attack")
-					else:
-						pass
-				else:
-					pass
-			if Pack[2] in Typez[self.Bio["Types"][i-1]]["W"] and immune == false:
-				Pack[0] = Pack[0] * 2 
-				print("SuperEffective : " , Pack[0])
-			if Pack[2] in Typez[self.Bio["Types"][i-1]]["R"] and immune == false:
-				Pack[0] = Pack[0] / 2 
-				print("Resisted: " , Pack[0])
-			else:
-				pass
-		if Pack[1] == "SpA" and immune == false:
-			Pack[0]/= self.Bio["Stats"]["SpDef"]
-			print("Damage recieved: ",Pack[0])
-		if Pack[1] == "Att"and immune == false:
-			Pack[0]/= self.Bio["Stats"]["Def"]
-			print("Damage Recieved: ",Pack[0])
-		if immune == true:
-			print("Immune")
-		else:
-			pass
-		round(Pack[0])
-		self.Health -= Pack[0]
-		print("Health: ", self.Get_Health())
-
-	func Recieve_status(Move: Dictionary):
-		if Move["Status"] == "Paralysis":
-			self.Status = "Paralysis"
-			self.Stats["Speed"] = self.Stats["Speed"] / 2
-			round(self.Stats["Speed"] / 2)
-		if Move["Status"] == "Poison":
-			self.Status = "Poison"
-		if Move["Status"] == "Sleep":
-			self.Status = "Sleep"
-	# Method with arguments that returns a value
-	#anywyas for this thing i need to factor in that a move dictionary will be inputted into the function
-	#its type , its attack type such as special or physical and accuracy , and return the damage value.
-	#in the type dictionary its important to ensure that its got a type variable with the name of the right variable name like type: Att or type: SpA
-	
-	func Attack(move: Dictionary) -> Array: #generates a package with damage values , damage types alongside the move name.
-		var Damage = ( move["BP"] * (1+ (Bio["Stats"][move["Aff"]]) / 50 ) )
-		var rol = RandomNumberGenerator.new()
-		rol.randomize()
-		var roll = rol.randi_range(0,5)
-		Damage = Damage * Modi[move["Aff"]] 
-		print("Damage Before: ",Damage)
-		for i in range(2):
-			if move["Type"] == Bio["Types"][i-1]:
-				Damage = Damage * 1.5 
-				print("Damage modified: ",Damage)
-			else:
-				pass
-		Damage = Damage * 1
-		Damage = Damage * self.Lvl
-		if self.Status == "Burn":
-			Damage / 2
-		else:
-			pass
-		#Daage is a integer so you can do the damage roll, fix in next update.
-		#Damage = Damage * (1 + (roll / 50))
-		print(Damage)
-		round(Damage)
-		int(Damage)
-		var Pack = [Damage,move["Aff"],move["Type"], move["Name"]]
-		print(Pack)
-		return Pack
-	
 	func Set_Ability(AB: String):
 		self.Ability = AB
 
@@ -539,7 +838,7 @@ class PK:
 		if self.Status == "Paralysis":
 			var numb2 = rng.randi_range(0,4)
 			if numb2 == 4:
-				result = "Missed"
+				result = "Paralyzed"
 			else:
 				if numb > move["Acc"]:
 					result = "Missed"
