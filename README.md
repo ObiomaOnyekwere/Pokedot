@@ -62,7 +62,7 @@ Get_EV() #Takes a dictionary that alloows you to update
 
 Get_Stats() #Returns the dictionary containing the stats of the pokemon, stats arnt editable directly.
 
-Sim_Attack() Requires the attack to be placed in. This function allows you to analyze what would happen in a hypotehtical scernario by returning a list of data that describes what happend.
+Sim_Attack() #Requires the attack to be placed in. This function allows you to analyze what would happen in a hypotehtical scernario by returning a list of data that describes what happend.
 #[0,"Effective",0] #positon 0 = damage , position 1 = effectiveness , position 2 = health after
 
 
