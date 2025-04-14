@@ -18,40 +18,56 @@ This framework also takes IV and EV's into account with a function that allows y
 ```gdscript
 
 # instantiating a new pokemon! example
-var P1 = Data.PK.new(Data.Geodude, 100) # here you can see the species and level initiated.
-#to finish the initiation so that IVS and set EV's take effec please use the next function.
-P1.Apply_IE()
-
-var P2 = Data.PK.new(Data.Pidgey, 100)
-
+var P1 = Data.PK.new(Data.Charmander, 100) # heres an example of a instantiated pokemon. The level is inputted alongside the species data.
+#by default all IVs are 0 so are the EVS. That will have to be manually handlded
+var P2 = Data.PK.new(Data.Geodude, 100)
+	
+P2.Generate_IVs() # Generate a random set of Iv's for the pokemon between 0-31. Useful for random pokemon. But you could alsways do this for trainers too!
+	
+P1.Generate_IVs()
+	
+P1.Apply_IE() # do this before every damage calc it sets up your pokemons IVs EVs and level into account. Its the final process of the initialization.
+	
 P2.Apply_IE()
-
-
-P1.Attack(Data.RockThrow) # generates the damage output for a move, this can then be supplied into a secondary function by the reciveer.
-
-P2.Recieve(P1.Attack(Data.RockThrow)) # thus the pidgey has just recieved the rockthrow.
-
-#lets say a move isnt 100% accourate well.
-
-#you can get values for if a move should miss using this function
-
-var E = P2.Get_Acc_Roll(Data.RockThrow)
-
-#using the return value of Hit or miss you can handle whether or not a moves hit should register.
-
-#heres an example.
-
+	
+	
+# if you want to do an accuracy check before letting the move hit you can use this function.
+	
+P1.Recieve_status(Data.ThunderWave)
+	
 var E = P1.Get_Acc_Roll(Data.RockThrow)
 	
-if E == "Missed":
-  print("Missed move")
+if E == "Missed": # this is a simple way of checking if a move misses or not.
+	print("Missed move")
+if E == "Paralyzed":
+	print("Paralyzed")
 else:
-  P1.Recieve(P2.Attack(Data.RockThrow))
-  print("Hit")
+	P1.Recieve(P2.Attack2(Data.RockThrow,P1.Get_Stats()))
+	print("Hit")
+	
+	
+	
 
 #Theres this and many more such features you should be able to find within this framework.
 
-#i may update the github as time goes on if i add anything more fancy of note.
+#the most used for you might be.
+
+Get_Health() # returns current health
+
+Get_IV() # Returns a dictionary of the IVs
+
+Update_IV() # takes a dictionary that aloows you to update the IV's . first you must get the iVS and then apply changes to then in a variable. and then you can update them.
+
+Get_EV() #Takes a dictionary that alloows you to update
+
+Get_Stats() #Returns the dictionary containing the stats of the pokemon, stats arnt editable directly.
+
+Sim_Attack() Requires the attack to be placed in. This function allows you to analyze what would happen in a hypotehtical scernario by returning a list of data that describes what happend.
+#[0,"Effective",0] #positon 0 = damage , position 1 = effectiveness , position 2 = health after
+
+
+
+#This is the second and most liekly last update for this.. but i could add weather or items at some point.
 	
 ```
 
