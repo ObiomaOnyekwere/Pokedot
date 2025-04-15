@@ -27,8 +27,7 @@ func _ready():
 	if E == "Paralyzed":
 		print("Paralyzed")
 	else:
-		P1.Recieve(P2.Attack2(Data.RockThrow,P1.Get_Stats()))
-		#P2.Recieve(P1.Attack(Data.Bubble))
+		P1.Recieve(P2.Attack(Data.RockThrow,P1.Get_Stats()))
 		print("Hit")
 	
 	
