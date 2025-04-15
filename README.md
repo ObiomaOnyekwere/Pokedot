@@ -42,7 +42,7 @@ if E == "Missed": # this is a simple way of checking if a move misses or not.
 if E == "Paralyzed":
 	print("Paralyzed")
 else:
-	P1.Recieve(P2.Attack2(Data.RockThrow,P1.Get_Stats()))
+	P1.Recieve(P2.Attack(Data.RockThrow,P1.Get_Stats()))
 	print("Hit")
 	
 	
