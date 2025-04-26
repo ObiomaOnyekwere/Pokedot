@@ -28,6 +28,7 @@ func _ready():
 		print("Paralyzed")
 	else:
 		P1.Recieve(P2.Attack(Data.RockThrow,P1.Get_Stats()))
+		#P2.Recieve(P1.Attack(Data.Bubble))
 		print("Hit")
 	
 	

@@ -631,6 +631,7 @@ class PK:
 		var immune = false
 		
 		#Pack[0] = Pack[0] / self.Lvl
+		
 		for i in range(2):
 			var loc = Typez[self.Bio["Types"][i-1]] 
 			var loc2 = loc["W"]
@@ -657,9 +658,11 @@ class PK:
 				pass
 		if Pack[1] == "SpA" and immune == false:
 			#Pack[0] /= self.Bio["Stats"]["SpDef"]
+			Pack[0] = Pack[0] / Modi["SpDef"]
 			print("Damage recieved: ",Pack[0])
 		if Pack[1] == "Att"and immune == false:
 			#Pack[0] /= self.Bio["Stats"]["Def"]
+			Pack[0] = Pack[0] / Modi["Def"]
 			print("Damage Recieved: ",Pack[0])
 		if immune == true:
 			print("Immune")
@@ -708,6 +711,7 @@ class PK:
 				pass
 			#Daage is a integer so you can do the damage roll, fix in next update.
 			#Damage = Damage * (1 + (roll / 50))
+			Damage = Damage * Modi["Att"]
 			print(Damage)
 			round(Damage)
 			int(Damage)
@@ -735,6 +739,7 @@ class PK:
 				pass
 			#Daage is a integer so you can do the damage roll, fix in next update.
 			#Damage = Damage * (1 + (roll / 50))
+			Damage = Damage * Modi["SpA"]
 			print(Damage)
 			round(Damage)
 			int(Damage)
@@ -778,9 +783,11 @@ class PK:
 				pass
 		if Pack[1] == "SpA" and immune == false:
 			#Pack[0]/= self.Bio["Stats"]["SpDef"]
+			Pack[0] = Pack[0] / Modi["SpDef"]
 			print("Damage recieved: ",Pack[0])
 		if Pack[1] == "Att"and immune == false:
 			#Pack[0]/= self.Bio["Stats"]["Def"]
+			Pack[0] = Pack[0] / Modi["Def"]
 			print("Damage Recieved: ",Pack[0])
 		if immune == true:
 			print("Immune")
