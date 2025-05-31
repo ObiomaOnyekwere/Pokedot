@@ -355,6 +355,8 @@ var SleepPowder = {
 	"Effect": "Puts the target to sleep."
 }
 
+var swordsdance = [1.0,"Att"]
+
 
 
 
@@ -669,6 +671,8 @@ class PK:
 		else:
 			pass
 		round(Pack[0])
+		Pack[0] = Pack[0] * Pack[4]
+		print("Final Damage:" , Pack[0])
 		self.Health -= Pack[0]
 		print("Health: ", self.Get_Health())
 
@@ -695,7 +699,6 @@ class PK:
 			var rol = RandomNumberGenerator.new()
 			rol.randomize()
 			var roll = rol.randf_range(0.85,1)
-			Damage = Damage * Modi[move["Aff"]] 
 			print("Damage Before: ",Damage)
 			for i in range(2):
 				if move["Type"] == Bio["Types"][i-1]:
@@ -711,11 +714,11 @@ class PK:
 				pass
 			#Daage is a integer so you can do the damage roll, fix in next update.
 			#Damage = Damage * (1 + (roll / 50))
-			Damage = Damage * Modi["Att"]
+			#Damage = Damage * Modi["Att"]
 			print(Damage)
 			round(Damage)
 			int(Damage)
-			Pack = [Damage,move["Aff"],move["Type"], move["Name"]]
+			Pack = [Damage,move["Aff"],move["Type"], move["Name"],Modi[move["Aff"]] ]
 			print(Pack)
 			#return Pack
 		if move["Aff"] == "SpA":
@@ -723,7 +726,6 @@ class PK:
 			var rol = RandomNumberGenerator.new()
 			rol.randomize()
 			var roll = rol.randf_range(0.85,1)
-			Damage = Damage * Modi[move["Aff"]] 
 			print("Damage Before: ",Damage)
 			for i in range(2):
 				if move["Type"] == Bio["Types"][i-1]:
@@ -733,17 +735,12 @@ class PK:
 					pass
 			#Damage = Damage * 1
 			#Damage = Damage * self.Lvl
-			if self.Status == "Burn":
-				Damage = Damage / 2
-			else:
-				pass
 			#Daage is a integer so you can do the damage roll, fix in next update.
 			#Damage = Damage * (1 + (roll / 50))
-			Damage = Damage * Modi["SpA"]
 			print(Damage)
 			round(Damage)
 			int(Damage)
-			Pack = [Damage,move["Aff"],move["Type"], move["Name"]]
+			Pack = [Damage,move["Aff"],move["Type"], move["Name"], Modi[move["SpA"]]]
 			print(Pack)
 			#return Pack
 		return Pack

@@ -15,10 +15,14 @@ func _ready():
 	
 	P2.Apply_IE()
 	
+	print(P1.Get_Stats())
+	
 	
 	# if you want to do an accuracy check before letting the move hit you can use this function.
 	
-	P1.Recieve_status(Data.ThunderWave)
+	#P1.Recieve_status(Data.ThunderWave)
+	
+	P2.Modify(Data.swordsdance[0],Data.swordsdance[1])
 	
 	var E = P1.Get_Acc_Roll(Data.RockThrow)
 	
