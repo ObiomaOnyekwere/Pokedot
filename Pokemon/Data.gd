@@ -740,7 +740,7 @@ class PK:
 			print(Damage)
 			round(Damage)
 			int(Damage)
-			Pack = [Damage,move["Aff"],move["Type"], move["Name"], Modi[move["SpA"]]]
+			Pack = [Damage,move["Aff"],move["Type"], move["Name"], Modi[move["Aff"]]]
 			print(Pack)
 			#return Pack
 		return Pack
